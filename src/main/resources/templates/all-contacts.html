@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contacts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <h1>Find all contacts</h1>
+    <div th:each="el : ${contacts}" class="alert alert-info mt-2">
+        <h3 th:text="${el.full_name}"/>
+        <p th:text="${el.contact}"/>
+        <a th:href="'/contacts/' + ${el.id}" class="btn btn-warning">Details</a>
+    </div>
+</div>
+
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

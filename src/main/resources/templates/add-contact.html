@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contacts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Adding new contacts</h1>
+    <form action="/contacts/add" method="post">
+        <input type="text" name="full_name" placeholder="Person's full name" class="form-controller"><br>
+        <input type="text" name="contact" placeholder="Add a phone number" class="form-controller"><br>
+        <input type="text" name="description" placeholder="Description" class="form-controller"><br>
+        <button type="submit" class="btn btn-success">Adding new contact</button>
+    </form>
+</div>
+
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

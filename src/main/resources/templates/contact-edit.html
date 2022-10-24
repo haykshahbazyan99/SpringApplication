@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editing contacts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Editing contact</h1>
+    <div th:each="el : ${contact}">
+        <form method="post">
+            <input type="text" th:value="${el.full_name}" name="full_name" placeholder="Enter the full name" class="form-controller"><br>
+            <input type="text" th:value="${el.contact}" name="contact" placeholder="Contact" class="form-controller"><br>
+            <input type="text" th:value="${el.description}" name="description" placeholder="Description" class="form-controller"><br>
+            <button type="submit" class="btn btn-success">Update</button>
+        </form>
+    </div>
+</div>
+
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
